@@ -1,31 +1,32 @@
 import React from 'react';
 import { ResumeEntry } from 'jsonresume-parser';
 
-export function Skills({ data }) {
+export interface TemplateComponentProps {
+  data: ResumeEntry[];
+}
+
+export const Skills = ({ data }: TemplateComponentProps) => {
   return (
     <>
       <h1>Skills</h1>
-      {data &&
-        data.map(({ title, keywords }) => (
-          <>
-            <dl>
-              <dt>{title}</dt>
-              <dl>{keywords.join(', ')}</dl>
-            </dl>
-          </>
-        ))}
+      {data.map(({ title, keywords }, index) => (
+        <dl key={index}>
+          <dt>{title}</dt>
+          <dl>{keywords}</dl>
+        </dl>
+      ))}
     </>
   );
-}
+};
 
-export function Languages({ data }) {
-  console.log(data);
-  return (
-    data && (
-      <dl>
-        <dt>Languages</dt>
-        <dd>{data.keywords.join(', ')}</dd>
+export const Languages = ({ data }: TemplateComponentProps) => (
+  <>
+    <h1>Languages</h1>
+    {data.map(({ title, keywords }, index) => (
+      <dl key={index}>
+        <dt>{title}</dt>
+        <dl>{keywords}</dl>
       </dl>
-    )
-  );
-}
+    ))}
+  </>
+);

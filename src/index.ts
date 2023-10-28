@@ -1,8 +1,15 @@
-import { Skills, Languages } from './sections/index.jsx';
+import React from 'react';
 
-const sections = [
+import { Skills, Languages, TemplateComponentProps } from './sections';
+
+const sections: TemplateSection[] = [
   { id: 'skills', Component: Skills },
   { id: 'languages', Component: Languages },
 ];
 
 export default sections;
+
+interface TemplateSection {
+  id: string;
+  Component: ({ data }: TemplateComponentProps) => React.ReactElement;
+}
