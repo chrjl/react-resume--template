@@ -1,4 +1,5 @@
 import React from 'react';
+import { ResumeEntry } from 'jsonresume-parser';
 
 export function Skills({ data }) {
   return (
