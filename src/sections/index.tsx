@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResumeEntry } from 'jsonresume-parser';
+import { ResumeEntry } from '@reactresume/jsonresume-parser';
 
 export interface TemplateComponentProps {
   data: ResumeEntry[];
