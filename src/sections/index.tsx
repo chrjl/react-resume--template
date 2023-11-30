@@ -1,59 +1,58 @@
 import React from 'react';
 
 import { ResumeEntry } from '@reactresume/types';
-import { DefinitionTable, DebugComponent } from '@reactresume/components';
+import {
+  DefinitionTable,
+  DebugComponent,
+  StackedCards,
+  GridCards,
+} from '@reactresume/components';
+
+export * from './basics';
 
 export interface TemplateComponentProps {
   data: ResumeEntry[];
 }
 
 export const Skills = ({ data }: TemplateComponentProps) => {
-  return (
-    <>
-      <h1>Skills</h1>
-      <DefinitionTable data={data} />
-    </>
-  );
+  return <DefinitionTable firstColumnWidth='10em' data={data} />;
 };
 
 export const Languages = ({ data }: TemplateComponentProps) => (
-  <>
-    <h1>Languages</h1>
-    <DefinitionTable data={data} />
-  </>
+  <DefinitionTable firstColumnWidth='10em' data={data} />
 );
 
 export const Education = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Education</h1>
-    <DebugComponent data={data} />
+    <GridCards data={data} />
   </>
 );
 
 export const Certificates = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Certificates</h1>
-    <DebugComponent data={data} />
+    <GridCards data={data} />
   </>
 );
 
 export const Projects = ({ data }: TemplateComponentProps) => (
   <>
-    <h1>Projects</h1>
-    <DebugComponent data={data} />
+    <h1>Web development</h1>
+    <GridCards data={data} />
   </>
 );
 
 export const Work = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Work</h1>
-    <DebugComponent data={data} />
+    <StackedCards data={data} />
   </>
 );
 
 export const Experience = ({ data }: TemplateComponentProps) => (
   <>
-    <h1>Experience</h1>
-    <DebugComponent data={data} />
+    <h1>Other work experience</h1>
+    <StackedCards data={data} />
   </>
 );
