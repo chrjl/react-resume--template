@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Basics,
   Skills,
   Languages,
   Education,
@@ -10,6 +11,8 @@ import {
   Work,
   TemplateComponentProps,
 } from './sections';
+
+const basics = { id: 'basics', Component: Basics };
 
 const sections: TemplateSection[] = [
   { id: 'skills', Component: Skills },
@@ -21,7 +24,7 @@ const sections: TemplateSection[] = [
   { id: 'work', Component: Work },
 ];
 
-export default sections;
+export default [basics, ...sections];
 
 interface TemplateSection {
   id: string;
