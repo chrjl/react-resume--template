@@ -15,11 +15,11 @@ export interface TemplateComponentProps {
 }
 
 export const Skills = ({ data }: TemplateComponentProps) => {
-  return <DefinitionTable firstColumnWidth='10em' data={data} />;
+  return <DefinitionTable firstColumnWidth="10em" data={data} />;
 };
 
 export const Languages = ({ data }: TemplateComponentProps) => (
-  <DefinitionTable firstColumnWidth='10em' data={data} />
+  <DefinitionTable firstColumnWidth="10em" data={data} />
 );
 
 export const Education = ({ data }: TemplateComponentProps) => (
@@ -53,6 +53,6 @@ export const Work = ({ data }: TemplateComponentProps) => (
 export const Experience = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Other work experience</h1>
-    <StackedCards data={data} />
+    <StackedCards data={data} rowGap="0.5em" />
   </>
 );
