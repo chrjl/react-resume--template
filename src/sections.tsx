@@ -4,15 +4,18 @@ import { ResumeEntry } from '@reactresume/types';
 import {
   DefinitionTable,
   DebugComponent,
+  Card,
   StackedCards,
   GridCards,
 } from '@reactresume/components';
 
-export * from './basics';
-
 export interface TemplateComponentProps {
   data: ResumeEntry[];
 }
+
+export const Basics = ({ data }: { data: ResumeEntry }) => {
+  return <Card entry={data} />;
+};
 
 export const Skills = ({ data }: TemplateComponentProps) => {
   return <DefinitionTable firstColumnWidth="10em" data={data} />;
