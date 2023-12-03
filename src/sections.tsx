@@ -41,7 +41,7 @@ export const Certificates = ({ data }: TemplateComponentProps) => (
 
 export const Projects = ({ data }: TemplateComponentProps) => (
   <>
-    <h1>Web development</h1>
+    <h1>Projects</h1>
     <GridCards data={data} />
   </>
 );
@@ -55,7 +55,7 @@ export const Work = ({ data }: TemplateComponentProps) => (
 
 export const Experience = ({ data }: TemplateComponentProps) => (
   <>
-    <h1>Other work experience</h1>
+    <h1>Experience</h1>
     <StackedCards data={data} rowGap="0.5em" />
   </>
 );
