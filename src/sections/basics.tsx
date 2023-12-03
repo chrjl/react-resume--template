@@ -12,7 +12,11 @@ export const Basics = ({ data }: BasicsProps) => {
   const profileUrls = profiles
     ? profiles
         .filter((profile) => profile._display !== false)
-        .map((profile) => <a href={profile.url}>{profile.url}</a>)
+        .map((profile) => (
+          <a href={profile.url} target="_blank">
+            {profile.url}
+          </a>
+        ))
     : [];
 
   return (
@@ -22,10 +26,17 @@ export const Basics = ({ data }: BasicsProps) => {
         {label && <h2>{label}</h2>}
       </div>
       <HorizontalUList
-        items={[email, phone, <a href={url}>{url}</a>, ...profileUrls]}
+        items={[
+          <a href={`mailto:${email}`}>{email}</a>,
+          phone,
+          <a href={url} target="_blank">
+            {url}
+          </a>,
+          ...profileUrls,
+        ]}
       />
       <br />
-      {city}, {region}, {countryCode}
+      {[city, region, countryCode].filter(Boolean).join(', ')}
     </>
   );
 };
