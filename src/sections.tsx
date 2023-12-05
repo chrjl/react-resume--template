@@ -18,24 +18,24 @@ export const Basics = ({ data }: { data: ResumeEntry }) => {
 };
 
 export const Skills = ({ data }: TemplateComponentProps) => {
-  return <DefinitionTable firstColumnWidth="10em" data={data} />;
+  return <DefinitionTable firstColumnWidth="10.5em" data={data} />;
 };
 
 export const Languages = ({ data }: TemplateComponentProps) => (
-  <DefinitionTable firstColumnWidth="10em" data={data} />
+  <DefinitionTable firstColumnWidth="10.5em" data={data} />
 );
 
 export const Education = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Education</h1>
-    <GridCards data={data} />
+    <GridCards data={data} rowGap="1em" />
   </>
 );
 
 export const Certificates = ({ data }: TemplateComponentProps) => (
   <>
     <h1>Certificates</h1>
-    <GridCards data={data} />
+    <GridCards data={data} rowGap="1em" />
   </>
 );
 
