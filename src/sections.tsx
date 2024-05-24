@@ -13,8 +13,8 @@ export interface TemplateComponentProps {
   data: ResumeEntry[];
 }
 
-export const Basics = ({ data }: { data: ResumeEntry }) => {
-  return <Card entry={data} />;
+export const Basics = ({ data }: TemplateComponentProps) => {
+  return <Card entry={data[0]} />;
 };
 
 export const Skills = ({ data }: TemplateComponentProps) => {
